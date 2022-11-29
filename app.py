@@ -78,6 +78,7 @@ def results():
         'sunrise': datetime.fromtimestamp(result_json["sys"]["sunrise"]).strftime("%H:%M"),
         'sunset': datetime.fromtimestamp(result_json["sys"]["sunset"]).strftime("%H:%M"),
         'units_letter': get_letter_for_units(units),
+        'icon': result_json["weather"][0]['icon']
     }
 
     return render_template('results.html', **context)
